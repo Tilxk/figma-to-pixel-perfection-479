@@ -1038,97 +1038,107 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Course Topics Section */}
-      <section className="w-full bg-[#ffffff] pt-[48px] sm:pt-[72px] md:pt-[96px] pb-[48px] sm:pb-[72px] md:pb-[96px]" style={{backgroundImage: 'url(/images/img_bg_gradient.png)'}}>
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-[22px] sm:gap-[33px] md:gap-[44px] justify-start items-center w-full">
-            {/* Section Header */}
-            <div className="flex flex-row gap-[15px] sm:gap-[22px] md:gap-[30px] justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px]">
+      <section
+  className="w-full bg-[#ffffff] pt-[48px] sm:pt-[72px] md:pt-[96px] pb-[48px] sm:pb-[72px] md:pb-[96px]"
+  style={{ backgroundImage: 'url(/images/img_bg_gradient.png)' }}
+>
+  <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col gap-[22px] sm:gap-[33px] md:gap-[44px] justify-start items-center w-full">
+      
+      {/* Section Header */}
+      <div className="flex flex-row gap-[15px] sm:gap-[22px] md:gap-[30px] justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px]">
+        <Image
+          src="/images/img_vector_deep_purple_a200_24x24.svg"
+          alt="Decoration"
+          width={24}
+          height={24}
+          className="w-[24px] h-[24px]"
+        />
+        <div className="flex flex-col justify-start items-center w-[60%]">
+          <div className="flex justify-center items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[6px] py-[6px]">
+            <div className="flex justify-start items-center w-auto bg-[#814fff26] rounded-[16px] px-[6px] py-[6px]">
               <Image
-                src="/images/img_vector_deep_purple_a200_24x24.svg"
-                alt="Decoration"
-                width={24}
-                height={24}
-                className="w-[24px] h-[24px]"
-              />
-              <div className="flex flex-col justify-start items-center w-[60%]">
-                <div className="flex justify-center items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[6px] py-[6px]">
-                  <div className="flex justify-start items-center w-auto bg-[#814fff26] rounded-[16px] px-[6px] py-[6px]">
-                    <Image
-                      src="/images/img_component_2_12.svg"
-                      alt="Icon"
-                      width={20}
-                      height={20}
-                      className="w-[20px] h-[20px]"
-                    />
-                  </div>
-                  <div className="flex justify-center items-center w-auto ml-[12px]">
-                    <p className="text-[12px] sm:text-[13px] md:text-[14px] font-inter font-normal leading-[12px] sm:leading-[14px] md:leading-[17px] text-left text-[#000000] w-auto">
-                      Featured Topics
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px] mt-[4px] sm:mt-[6px] md:mt-[8px]">
-                  <h2 className="text-[25px] sm:text-[37px] md:text-[50px] font-poppins font-medium leading-[37px] sm:leading-[56px] md:leading-[75px] text-center text-[#000000] w-auto">
-                    Courses Topics
-                  </h2>
-                </div>
-                <div className="flex flex-col justify-start items-center w-full mt-[4px] sm:mt-[6px] md:mt-[8px]">
-                  <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-center text-[#000000] w-auto">
-                    Explore the key topics covered in our courses, designed to equip you with the skills
-                  </p>
-                  <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-center text-[#000000] w-auto">
-                    needed for real-world success.
-                  </p>
-                </div>
-              </div>
-              <Image
-                src="/images/img_vector_deep_purple_a200_24x24.svg"
-                alt="Decoration"
-                width={24}
-                height={24}
-                className="w-[24px] h-[24px]"
+                src="/images/img_component_2_12.svg"
+                alt="Icon"
+                width={20}
+                height={20}
+                className="w-[20px] h-[20px]"
               />
             </div>
-            {/* Topics Grid */}
-            <div className="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px]">
-              <div className="flex flex-wrap gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center w-full">
-                {topics.slice(0, 7).map((topic, index) => (
-                  <button
-                    key={index}
-                    className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-left text-[#000000] w-auto bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[16px] px-[23px] sm:px-[34px] md:px-[46px] py-[8px] sm:py-[12px] md:py-[16px] shadow-[0px_10px_30px_#00000026] gap-[5px] sm:gap-[7px] md:gap-[10px] flex items-center hover:bg-[linear-gradient(0deg,#ffffff33_0%,#ffffff_100%)] transition-all duration-200"
-                  >
-                    <Image
-                      src="/images/img_vector_deep_purple_a200.svg"
-                      alt="Topic Icon"
-                      width={20}
-                      height={20}
-                      className="w-[15px] sm:w-[17px] md:w-[20px] h-[15px] sm:h-[17px] md:h-[20px]"
-                    />
-                    {topic}
-                  </button>
-                ))}
-              </div>
-              <div className="flex flex-row gap-[7px] sm:gap-[10px] md:gap-[14px] justify-center items-center w-auto">
-                {topics.slice(7, 9).map((topic, index) => (
-                  <button
-                    key={index + 7}
-                    className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-left text-[#000000] w-auto bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[16px] px-[23px] sm:px-[34px] md:px-[46px] py-[8px] sm:py-[12px] md:py-[16px] shadow-[0px_10px_30px_#00000026] gap-[5px] sm:gap-[7px] md:gap-[10px] flex items-center hover:bg-[linear-gradient(0deg,#ffffff33_0%,#ffffff_100%)] transition-all duration-200"
-                  >
-                    <Image
-                      src="/images/img_vector_deep_purple_a200.svg"
-                      alt="Topic Icon"
-                      width={20}
-                      height={20}
-                      className="w-[15px] sm:w-[17px] md:w-[20px] h-[15px] sm:h-[17px] md:h-[20px]"
-                    />
-                    {topic}
-                  </button>
-                ))}
-              </div>
+            <div className="flex justify-center items-center w-auto ml-[12px]">
+              <p className="text-[12px] sm:text-[13px] md:text-[14px] font-inter font-normal leading-[12px] sm:leading-[14px] md:leading-[17px] text-left text-[#000000] w-auto">
+                Featured Topics
+              </p>
             </div>
           </div>
+          <div className="flex justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px] mt-[4px] sm:mt-[6px] md:mt-[8px]">
+            <h2 className="text-[25px] sm:text-[37px] md:text-[50px] font-poppins font-medium leading-[37px] sm:leading-[56px] md:leading-[75px] text-center text-[#000000] w-auto">
+              Courses Topics
+            </h2>
+          </div>
+          <div className="flex flex-col justify-start items-center w-full mt-[4px] sm:mt-[6px] md:mt-[8px]">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-center text-[#000000] w-auto">
+              Explore the key topics covered in our courses, designed to equip you with the skills
+            </p>
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-center text-[#000000] w-auto">
+              needed for real-world success.
+            </p>
+          </div>
         </div>
-      </section>
+        <Image
+          src="/images/img_vector_deep_purple_a200_24x24.svg"
+          alt="Decoration"
+          width={24}
+          height={24}
+          className="w-[24px] h-[24px]"
+        />
+      </div>
+
+      {/* Topics Grid */}
+      <div className="flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center w-full px-[28px] sm:px-[42px] md:px-[56px]">
+        
+        {/* First row: 5 topics */}
+        <div className="flex flex-wrap gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center w-full">
+          {topics.slice(0, 5).map((topic, index) => (
+            <button
+              key={index}
+              className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-left text-[#000000] w-auto bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[16px] px-[23px] sm:px-[34px] md:px-[46px] py-[8px] sm:py-[12px] md:py-[16px] shadow-[0px_10px_30px_#00000026] gap-[5px] sm:gap-[7px] md:gap-[10px] flex items-center hover:bg-[linear-gradient(0deg,#ffffff33_0%,#ffffff_100%)] transition-all duration-200"
+            >
+              <Image
+                src="/images/img_vector_deep_purple_a200.svg"
+                alt="Topic Icon"
+                width={20}
+                height={20}
+                className="w-[15px] sm:w-[17px] md:w-[20px] h-[15px] sm:h-[17px] md:h-[20px]"
+              />
+              {topic}
+            </button>
+          ))}
+        </div>
+
+        {/* Second row: 4 topics */}
+        <div className="flex flex-wrap gap-[8px] sm:gap-[12px] md:gap-[16px] justify-center items-center w-full">
+          {topics.slice(5, 9).map((topic, index) => (
+            <button
+              key={index + 5}
+              className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[18px] sm:leading-[19px] md:leading-[20px] text-left text-[#000000] w-auto bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[16px] px-[23px] sm:px-[34px] md:px-[46px] py-[8px] sm:py-[12px] md:py-[16px] shadow-[0px_10px_30px_#00000026] gap-[5px] sm:gap-[7px] md:gap-[10px] flex items-center hover:bg-[linear-gradient(0deg,#ffffff33_0%,#ffffff_100%)] transition-all duration-200"
+            >
+              <Image
+                src="/images/img_vector_deep_purple_a200.svg"
+                alt="Topic Icon"
+                width={20}
+                height={20}
+                className="w-[15px] sm:w-[17px] md:w-[20px] h-[15px] sm:h-[17px] md:h-[20px]"
+              />
+              {topic}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Community Section */}
       {/* <section className="w-full  flex flex-col justify-start items-center">
