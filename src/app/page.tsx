@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/common/Header';
-import Button from '@/components/ui/Button';
+import Footer from '@/components/common/Footer';
 interface Course {
   id: string;
   title: string;
@@ -389,171 +389,223 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Courses Section */}
-      <section className="w-full bg-[#ffffff] pt-[80px] sm:pt-[100px] pb-[80px] sm:pb-[100px]" style={{backgroundImage: 'url(/images/img_bg_gradient.png)'}}>
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-[60px] justify-center items-center w-full">
-            {/* Section Header - Centered */}
-            <div className="flex flex-col justify-center items-center w-full max-w-[800px] text-center">
-              <div className="flex justify-center items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[16px] py-[8px] mb-4">
-                <div className="flex justify-center items-center bg-[#814fff26] rounded-[16px] px-[8px] py-[8px] mr-3">
-                  <Image src="/images/img_component_2_deep_purple_a200.svg" alt="Icon" width={20} height={20} />
-                </div>
-                <p className="text-[14px] font-inter font-normal leading-[17px] text-[#000000]">
-                  Our Courses
-                </p>
-              </div>
-              
-              <h2 className="text-[32px] sm:text-[42px] md:text-[50px] font-poppins font-medium leading-[1.2] text-center text-[#000000] mb-4">
-                Featured Courses
-              </h2>
-              
-              <div className="text-center max-w-[600px]">
-                <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-[#000000] mb-2">
-                  From critical skills to technical topics, we support your professional development
-                </p>
-                <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-[#000000]">
-                  with courses that help you grow and succeed.
-                </p>
-              </div>
-            </div>
-
-            {/* Courses Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] w-full max-w-[1200px]">
-              {courses.map((course) => (
-                <div key={course.id} className="flex flex-col justify-start items-center bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[24px] p-[24px] shadow-[0px_10px_30px_#00000019]">
-                  <div className="flex flex-col gap-[16px] justify-start items-center w-full">
-                    <Image
-                      src={course.image}
-                      alt={course.title}
-                      width={332}
-                      height={214}
-                      className="w-full h-auto rounded-[16px]"
-                    />
-                    <div className="flex flex-row justify-between items-center w-full">
-                      <div className="flex flex-row gap-[4px] justify-center items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Image
-                            key={i}
-                            src="/images/img_component_2_amber_a400.svg"
-                            alt="Star"
-                            width={16}
-                            height={16}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-[18px] font-poppins font-medium leading-[24px] text-[#000000]">
-                        {course.price}
-                      </p>
-                    </div>
-                    <h3 className="text-[18px] font-poppins font-medium leading-[24px] text-center text-[#000000] hover:text-button-1 cursor-pointer transition-colors duration-200">
-                      {course.title}
-                    </h3>
-                    <p className="text-[14px] font-inter font-normal leading-[20px] text-center text-[#000000] hover:text-button-1 cursor-pointer transition-colors duration-200">
-                      {course.description}
-                    </p>
-                    <div className="flex justify-between items-center w-full">
-                      {course.featured && (
-                        <button className="text-[12px] font-inter font-normal text-[#814fff] bg-[#814fff26] rounded-[8px] px-[12px] py-[6px] hover:bg-[#814fff33] transition-colors duration-200">
-                          Featured
-                        </button>
-                      )}
-                      <div className="flex justify-center items-center gap-2 ml-auto">
-                        <Image src="/images/img_component_2_black_900.svg" alt="Level Icon" width={20} height={20} />
-                        <p className="text-[12px] font-inter font-normal text-[#000000]">
-                          {course.level}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* View Courses Button */}
-            <button className="text-[16px] font-inter font-medium leading-[20px] text-[#000000] border border-[#000000] rounded-[22px] px-[32px] py-[12px] gap-[8px] flex items-center hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-200">
-              View Courses
-              <Image src="/images/img_component_2_black_900_20x20.svg" alt="Arrow" width={20} height={20} />
-            </button>
+      <section
+  className="w-full bg-[#ffffff] pt-[80px] sm:pt-[100px] pb-[80px] sm:pb-[100px]"
+  style={{ backgroundImage: 'url(/images/img_bg_gradient.png)' }}
+>
+  <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col gap-[60px] justify-center items-center w-full">
+      {/* Section Header */}
+      <div className="flex flex-col justify-center items-center w-full max-w-[800px] text-center">
+        <div className="flex justify-center items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[16px] py-[8px] mb-4">
+          <div className="flex justify-center items-center bg-[#814fff26] rounded-[16px] px-[8px] py-[8px] mr-3">
+            <Image
+              src="/images/img_component_2_deep_purple_a200.svg"
+              alt="Icon"
+              width={20}
+              height={20}
+            />
           </div>
+          <p className="text-[14px] font-inter font-normal leading-[17px] text-[#000000]">
+            Our Courses
+          </p>
         </div>
-      </section>
+
+        <h2 className="text-[32px] sm:text-[42px] md:text-[50px] font-poppins font-medium leading-[1.2] text-center text-[#000000] mb-4">
+          Featured Courses
+        </h2>
+
+        <div className="text-center max-w-[600px]">
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-[#000000] mb-2">
+            From critical skills to technical topics, we support your
+            professional development
+          </p>
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-[#000000]">
+            with courses that help you grow and succeed.
+          </p>
+        </div>
+      </div>
+
+      {/* Courses Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] w-full max-w-[1200px]">
+        {courses.map((course) => (
+          <div
+            key={course.id}
+            className="group relative flex flex-col justify-start items-center bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[24px] p-[24px] shadow-[0px_10px_30px_#00000019] transition-all duration-300 hover:scale-[1.03] hover:shadow-xl overflow-hidden"
+          >
+            {/* Hover effect background (optional subtle gradient overlay) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#f3f3f3] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <div className="flex flex-col gap-[16px] justify-start items-center w-full relative z-10">
+              {/* Image with hover transform */}
+              <div className="w-full overflow-hidden rounded-[16px]">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={332}
+                  height={214}
+                  className="w-full h-auto rounded-[16px] transform transition-transform duration-500 group-hover:-translate-y-4 group-hover:shadow-lg"
+                />
+              </div>
+
+              <div className="flex flex-row justify-between items-center w-full">
+                <div className="flex flex-row gap-[4px] justify-center items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Image
+                      key={i}
+                      src="/images/img_component_2_amber_a400.svg"
+                      alt="Star"
+                      width={16}
+                      height={16}
+                    />
+                  ))}
+                </div>
+                <p className="text-[18px] font-poppins font-medium leading-[24px] text-[#000000]">
+                  {course.price}
+                </p>
+              </div>
+
+              <h3 className="text-[18px] font-poppins font-medium leading-[24px] text-center text-[#000000] hover:text-button-1 cursor-pointer transition-colors duration-200">
+                {course.title}
+              </h3>
+              <p className="text-[14px] font-inter font-normal leading-[20px] text-center text-[#000000] hover:text-button-1 cursor-pointer transition-colors duration-200">
+                {course.description}
+              </p>
+
+              <div className="flex justify-between items-center w-full">
+                {course.featured && (
+                  <button className="text-[12px] font-inter font-normal text-[#814fff] bg-[#814fff26] rounded-[8px] px-[12px] py-[6px] hover:bg-[#814fff33] transition-colors duration-200">
+                    Featured
+                  </button>
+                )}
+                <div className="flex justify-center items-center gap-2 ml-auto">
+                  <Image
+                    src="/images/img_component_2_black_900.svg"
+                    alt="Level Icon"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="text-[12px] font-inter font-normal text-[#000000]">
+                    {course.level}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* View Courses Button */}
+      <button className="text-[16px] font-inter font-medium leading-[20px] text-[#000000] border border-[#000000] rounded-[22px] px-[32px] py-[12px] gap-[8px] flex items-center hover:bg-[#000000] hover:text-[#ffffff] transition-all duration-200">
+        View Courses
+        <Image
+          src="/images/img_component_2_black_900_20x20.svg"
+          alt="Arrow"
+          width={20}
+          height={20}
+        />
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* Testimonials Section - Fixed alignment */}
-      <section className="w-full bg-[#ffffff] pt-[80px] sm:pt-[100px] pb-[80px] sm:pb-[100px]" style={{backgroundImage: 'url(/images/img_bg_gradient.png)'}}>
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-[40px] sm:gap-[60px] justify-center items-start w-full">
-            {/* Section Header - Left column */}
-            <div className="flex flex-col justify-start items-start w-full lg:w-[40%]">
-              <div className="flex justify-start items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[16px] py-[8px] mb-6">
-                <div className="flex justify-center items-center bg-[#814fff26] rounded-[16px] px-[8px] py-[8px] mr-3">
-                  <Image src="/images/img_component_2_deep_purple_a200_20x20.svg" alt="Icon" width={20} height={20} />
-                </div>
-                <p className="text-[14px] font-inter font-normal leading-[17px] text-[#000000]">
-                  Testimonials
-                </p>
-              </div>
-              
-              <h2 className="text-[32px] sm:text-[42px] md:text-[50px] font-poppins font-medium leading-[1.2] text-left text-[#000000] mb-6">
-                Our Students feedback
-              </h2>
-              
-              <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-left text-[#000000] mb-6">
-                Explore the incredible advantages of enrolling in our courses and enhancing your skills.
-              </p>
-              
-              <button className="text-[16px] font-inter font-medium leading-[20px] text-[#ffffff] bg-[linear-gradient(162deg,#ffffff_0%,#000000_100%)] rounded-[20px] px-[24px] py-[10px] hover:opacity-90 transition-opacity duration-200">
-                Start Learning Now
-              </button>
-            </div>
+      <section
+  className="w-full bg-[#ffffff] pt-[80px] sm:pt-[100px] pb-[80px] sm:pb-[100px]"
+  style={{ backgroundImage: 'url(/images/img_bg_gradient.png)' }}
+>
+  <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row gap-[40px] sm:gap-[60px] justify-center items-start w-full">
+      {/* Section Header - Left column */}
+      <div className="flex flex-col justify-start items-start w-full lg:w-[40%]">
+        <div className="flex justify-start items-center w-auto bg-[#ffffff] border border-[#e9edf8] rounded-[16px] px-[16px] py-[8px] mb-6">
+          <div className="flex justify-center items-center bg-[#814fff26] rounded-[16px] px-[8px] py-[8px] mr-3">
+            <Image
+              src="/images/img_component_2_deep_purple_a200_20x20.svg"
+              alt="Icon"
+              width={20}
+              height={20}
+            />
+          </div>
+          <p className="text-[14px] font-inter font-normal leading-[17px] text-[#000000]">
+            Testimonials
+          </p>
+        </div>
 
-            {/* Testimonials Grid - Right column */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-[30px] w-full lg:w-[60%]">
-              {testimonials.slice(0, 3).map((testimonial) => (
-                <div key={testimonial.id} className="flex flex-col justify-start items-center bg-[linear-gradient(0deg,#ffffff_0%,#ffffff7f_100%)] border-[3px] border-[#ffffff] rounded-[24px] p-[20px] shadow-[0px_10px_30px_#00000026]">
-                  <div className="flex flex-col gap-[16px] justify-start items-center w-full">
-                    <div className="flex justify-between items-start w-full">
-                      <div className="flex gap-[4px]">
-                        {[...Array(5)].map((_, i) => (
-                          <Image
-                            key={i}
-                            src="/images/img_component_2_amber_a400.svg"
-                            alt="Star"
-                            width={16}
-                            height={16}
-                          />
-                        ))}
-                      </div>
-                      <Image src="/images/img_component_2_blue_gray_300.svg" alt="Quote" width={24} height={24} />
-                    </div>
-                    
-                    <p className="text-[14px] font-inter font-normal italic leading-[20px] text-left text-[#000000]">
-                      {testimonial.content}
-                    </p>
-                    
-                    <div className="flex justify-start items-center gap-3 w-full">
+        <h2 className="text-[32px] sm:text-[42px] md:text-[50px] font-poppins font-medium leading-[1.2] text-left text-[#000000] mb-6">
+          Our Students feedback
+        </h2>
+
+        <p className="text-[14px] sm:text-[15px] md:text-[16px] font-inter font-normal leading-[1.4] text-left text-[#000000] mb-6">
+          Explore the incredible advantages of enrolling in our courses and enhancing your skills.
+        </p>
+
+        <button className="text-[16px] font-inter font-medium leading-[20px] text-[#ffffff] bg-[linear-gradient(162deg,#ffffff_0%,#000000_100%)] rounded-[20px] px-[24px] py-[10px] hover:opacity-90 transition-opacity duration-200">
+          Start Learning Now
+        </button>
+      </div>
+
+      {/* Testimonials Grid - Right column */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-[30px] w-full lg:w-[60%]">
+        {testimonials.slice(0, 3).map((testimonial) => (
+          <div
+            key={testimonial.id}
+            className="relative group cursor-pointer transition-transform duration-500 hover:-translate-y-5"
+          >
+            {/* Gradient Borders */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#814fff]/50 to-[#ffffff] rounded-[24px] blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+
+            <div className="relative bg-[#ffffff] rounded-[24px] p-[20px] shadow-[0px_10px_30px_#00000026] border-[3px] border-[#ffffff] z-10">
+              <div className="flex flex-col gap-[16px] justify-start items-center w-full">
+                <div className="flex justify-between items-start w-full">
+                  <div className="flex gap-[4px]">
+                    {[...Array(5)].map((_, i) => (
                       <Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full"
+                        key={i}
+                        src="/images/img_component_2_amber_a400.svg"
+                        alt="Star"
+                        width={16}
+                        height={16}
                       />
-                      <div className="flex flex-col">
-                        <p className="text-[14px] font-inter font-medium leading-[18px] text-[#000000]">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-[12px] font-inter font-normal leading-[16px] text-[#000000]">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </div>
+                    ))}
+                  </div>
+                  <Image
+                    src="/images/img_component_2_blue_gray_300.svg"
+                    alt="Quote"
+                    width={24}
+                    height={24}
+                  />
+                </div>
+
+                <p className="text-[14px] font-inter font-normal italic leading-[20px] text-left text-[#000000]">
+                  {testimonial.content}
+                </p>
+
+                <div className="flex justify-start items-center gap-3 w-full">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-[14px] font-inter font-medium leading-[18px] text-[#000000]">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-[12px] font-inter font-normal leading-[16px] text-[#000000]">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Benefits Section */}
       <section className="w-full bg-[#ffffff] pt-[47px] sm:pt-[70px] md:pt-[94px] pb-[47px] sm:pb-[70px] md:pb-[94px]" style={{backgroundImage: 'url(/images/img_bg_gradient.png)'}}>
@@ -1279,92 +1331,7 @@ const HomePage: React.FC = () => {
       </section> */}
 
       {/* Footer Section */}
-      <footer 
-          className="w-full pt-[38px] pb-[38px] mt-[-128px]"
-          style={{
-            backgroundImage: "url('/images/img_bg_gradient_704x1846.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-[58px] mt-[122px] mr-[14px] ml-[14px]">
-              {/* Main Footer Content */}
-              <div className="flex flex-col justify-center items-center gap-[28px]">
-                {/* Logo */}
-                <img
-                  src="/images/img_logo.svg"
-                  alt="CourseSite Logo"
-                  className="w-[162px] h-[36px]"
-                />
-                {/* CTA Section */}
-                <div className="flex flex-col justify-center items-center gap-[12px]">
-                  <div className="flex flex-col justify-center items-center">
-                    <h2 className="text-[30px] sm:text-[40px] md:text-[50px] font-poppins font-medium leading-[45px] sm:leading-[60px] md:leading-[75px] text-center text-global-1">
-                      Boost your Learning & Knowledge
-                    </h2>
-                    <h2 className="text-[30px] sm:text-[40px] md:text-[50px] font-poppins font-medium leading-[45px] sm:leading-[60px] md:leading-[75px] text-center text-global-1 mt-[-28px]">
-                      with CourseSite Now
-                    </h2>
-                  </div>
-                  <Button className="bg-[linear-gradient(161deg,#ffffff_0%,#000000_100%)] rounded-[26px] pt-[16px] pr-[34px] pb-[16px] pl-[34px] text-[16px] font-inter font-medium leading-[20px] text-button-2">
-                    Start Learning Now
-                  </Button>
-                </div>
-                {/* Social Section */}
-                <div className="flex flex-row justify-center items-center gap-[8px]">
-                  <span className="text-[14px] font-inter font-normal leading-[17px] text-global-1">
-                    Your Path to Becoming a Web Wizard
-                  </span>
-                  <img
-                    src="/images/img_link_twitter_profile.svg"
-                    alt="social link"
-                    className="w-[34px] h-[34px] rounded-[16px]"
-                  />
-                </div>
-              </div>
-              {/* Footer Links */}
-              <div className="flex flex-col gap-[24px]">
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-0">
-                  <div className="flex flex-row justify-between items-center w-full sm:w-auto gap-4 sm:gap-[62px]">
-                    <span className="text-[16px] font-inter font-medium leading-[20px] text-global-1">
-                      Benefits
-                    </span>
-                    <span className="text-[16px] font-inter font-medium leading-[20px] text-global-3">
-                      Courses
-                    </span>
-                    <span className="text-[16px] font-inter font-medium leading-[20px] text-global-1">
-                      Contact
-                    </span>
-                    <span className="text-[16px] font-inter font-medium leading-[20px] text-global-1">
-                      About us
-                    </span>
-                  </div>
-                  <div className="flex flex-row justify-center items-center gap-[14px] mt-4 sm:mt-0 sm:ml-auto">
-                    <span className="text-[16px] font-inter font-normal leading-[20px] text-global-1">
-                      Join Our news Letter
-                    </span>
-                    <Button className="border border-global-1 rounded-[22px] pt-[12px] pr-[20px] pb-[12px] pl-[20px] text-[16px] font-inter font-medium leading-[20px] text-global-1 bg-transparent">
-                      Notify Me
-                    </Button>
-                  </div>
-                </div>
-                {/* Copyright */}
-                <div className="border-t border-[#5c6470] pt-[24px]">
-                  <div className="flex flex-row justify-center items-center">
-                    <span className="text-[16px] font-inter font-normal leading-[20px] text-center text-global-1">
-                      Kyureeus © 2025. Designed by
-                    </span>
-                    <span className="text-[16px] font-inter font-normal leading-[20px] text-center text-global-1 pl-[4px] pr-[4px]">
-                      Catchy kk
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+      <Footer />
     </div>
   );
 };

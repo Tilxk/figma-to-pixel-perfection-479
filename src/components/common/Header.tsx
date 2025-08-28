@@ -16,6 +16,18 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     router.push('/courses');
     setMenuOpen(false);
   };
+  const navigateToKyureeusCatalyst = () => {
+    router.push('/kyureeus-catalyst');
+    setMenuOpen(false);
+  };
+  const navigateToPricing = () => {
+    router.push('/pricing');
+    setMenuOpen(false);
+  };
+  const navigateToContact = () => {
+    router.push('/contact');
+    setMenuOpen(false);
+  };
 
   const navigateToHome = () => {
     router.push('/');
@@ -58,12 +70,22 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               </button>
               <button 
                 role="menuitem"
+                onClick={navigateToPricing}
                 className="text-[16px] font-inter font-normal leading-[20px] text-left text-global-1 w-auto hover:text-button-1 transition-colors duration-200 cursor-pointer"
               >
-                Reviews
+                Pricing
               </button>
               <button 
                 role="menuitem"
+                onClick={navigateToKyureeusCatalyst}
+                className="text-[16px] font-inter font-normal leading-[20px] text-left text-global-1 w-auto hover:text-button-1 transition-colors duration-200 cursor-pointer"
+              >
+                Kyureeus Catalyst™
+              </button>
+              
+              <button 
+                role="menuitem"
+                onClick={navigateToContact}
                 className="text-[16px] font-inter font-normal leading-[20px] text-left text-global-1 w-auto hover:text-button-1 transition-colors duration-200 cursor-pointer"
               >
                 Contact
